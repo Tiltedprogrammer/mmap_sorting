@@ -1,7 +1,8 @@
 # mmap_sorting
 
-*MMAP SORT* (test file sort.txt)
-Flat profile:
+_MMAP SORT_ (test file sort.txt)
+
+_Flat profile:_
 
 Each sample counts as 0.01 seconds.
 
@@ -14,7 +15,7 @@ Each sample counts as 0.01 seconds.
   5.81 |              15.96 |         0.94 |      N/A |         N/A |          N/A | frame_dummy        
   0.75 |              16.08 |         0.12 |        1 |        0.12 |        12.12 | merge_sort         
 
-Call graph:
+_Call graph:_
 
 granularity: each sample hit covers 2 byte(s) for 0.06% of 16.08 seconds
   
@@ -45,8 +46,22 @@ granularity: each sample hit covers 2 byte(s) for 0.06% of 16.08 seconds
        |         |                  |                |                  |     <spontaneous> 
 [6]    | 5.8   | 0.94 |   0.00|              |   frame_dummy [6]
       
-   Index by function name:
+   _Index by function name:_
 
    [5] comparator              [1] main                    [2] merge_sort
    [6] frame_dummy             [4] merge                   [3] merge_sort_recurse
+   
+   
+   _Valgrind:_
+
+==4658== 
+==4658== HEAP SUMMARY:
+==4658==     in use at exit: 0 bytes in 0 blocks
+==4658==   total heap usage: 3 allocs, 3 frees, 4,001,024 bytes allocated
+==4658== 
+==4658== All heap blocks were freed -- no leaks are possible
+==4658== 
+==4658== For counts of detected and suppressed errors, rerun with: -v
+==4658== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
 
